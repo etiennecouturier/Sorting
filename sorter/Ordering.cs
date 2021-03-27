@@ -14,26 +14,26 @@ namespace sorter
             this.asc = asc;
         }
 
-        public void setField(string field)
+        public void SetField(string field)
         {
             this.field = field;
         }
 
-        public void setAsc(bool asc)
+        public void SetAsc(bool asc)
         {
             this.asc = asc;
         }
-        public string getField()
+        public string GetField()
         {
             return field;
         }
 
-        public bool isAsc()
+        public bool IsAsc()
         {
             return asc;
         }
 
-        public Func<T, T, bool> comp<T>() where T : IComparable
+        public Func<T, T, bool> Comp<T>() where T : IComparable
         {
             if (asc)
                 return (a, b) => a.CompareTo(b) > 0;

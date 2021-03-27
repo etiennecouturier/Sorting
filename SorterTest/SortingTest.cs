@@ -8,7 +8,7 @@ namespace SorterTest
     public class SortingTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestSortByOneAttrAsc()
         {
             string[] data =
                     {
@@ -28,7 +28,27 @@ namespace SorterTest
         }
 
         [TestMethod]
-        public void TestMethod2()
+        public void TestSortByOneAttrDesc()
+        {
+            string[] data =
+                    {
+                        "id:1,nev:Margit",
+                        "id:2,nev:Jancsi",
+                        "id:3,nev:Robert"
+                    };
+            Sorting.sort
+                (
+                    data,
+                    new Ordering[]
+                    {
+                        new Ordering("nev", false)
+                    }
+                );
+            CollectionAssert.AreEqual(new int[] { 3, 1, 2 }, ExtractResult(data));
+        }
+
+        [TestMethod]
+        public void TestSortByTwoAttrsTwoDirections()
         {
             string[] data =
                     {
@@ -52,7 +72,7 @@ namespace SorterTest
         }
 
         [TestMethod]
-        public void TestMethod3()
+        public void TestSortByFourAttrsTwoDirections()
         {
             string[] data =
                     {
@@ -80,7 +100,7 @@ namespace SorterTest
             int[] res = new int[data.Length];
             for (int i = 0; i < data.Length; i++)
             {
-                res[i] = data[i].get<int>("id");
+                res[i] = data[i].Get<int>("id");
             }
 
             return res;

@@ -9,10 +9,10 @@ namespace sorter
 
         public Input()
         {
-            readInput();
+            ReadInput();
         }
 
-        private void readInput()
+        private void ReadInput()
         {
             string fieldName = "";
             int j = -1;
@@ -22,10 +22,10 @@ namespace sorter
                 {
                     if (j >= 0)
                     {
-                        orderings[j].setField(fieldName);
+                        orderings[j].SetField(fieldName);
                     }
                     Ordering ordering = new Ordering();
-                    ordering.setAsc(c == '+' ? true : false);
+                    ordering.SetAsc(c == '+' ? true : false);
                     orderings[++j] = ordering;
                     fieldName = "";
                 }
@@ -34,19 +34,19 @@ namespace sorter
                     fieldName += c;
                 }
             }
-            orderings[j].setField(fieldName);
+            orderings[j].SetField(fieldName);
 
             data = new string[Convert.ToInt32(Console.ReadLine())];
             for (int i = 0; i < data.Length; i++)
                 data[i] = Console.ReadLine();
         }
 
-        public Ordering[] getOrdering()
+        public Ordering[] GetOrdering()
         {
             return orderings;
         }
 
-        public string[] getData()
+        public string[] GetData()
         {
             return data;
         }

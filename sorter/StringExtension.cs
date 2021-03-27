@@ -4,7 +4,7 @@ namespace sorter
 {
     public static class StringExtension
     {
-        public static T get<T>(this string line, string attrName)
+        public static T Get<T>(this string line, string attrName)
         {
             foreach (string s in line.Split(','))
             {

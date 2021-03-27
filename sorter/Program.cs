@@ -8,8 +8,8 @@ namespace sorter
         static void Main(string[] args)
         {
             Input input = new Input();
-            Sorting.sort(input);
-            foreach (string p in input.getData())
+            Sorting.Sort(input);
+            foreach (string p in input.GetData())
                 Console.WriteLine(p);
             Console.ReadLine();
         }
