@@ -7,7 +7,12 @@ namespace sorter
         private Ordering[] orderings = new Ordering[4];
         private string[] data;
 
-        public void readInput()
+        public Input()
+        {
+            readInput();
+        }
+
+        private void readInput()
         {
             string fieldName = "";
             int j = -1;
