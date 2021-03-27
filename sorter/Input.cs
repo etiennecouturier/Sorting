@@ -4,7 +4,7 @@ namespace sorter
 {
     public class Input
     {
-        private Ordering[] orderings = new Ordering[4];
+        private Ordering[] orderings;
         private string[] data;
 
         public Input()
@@ -14,9 +14,16 @@ namespace sorter
 
         private void ReadInput()
         {
+            string orderingStr = Console.ReadLine();
+            int numberOfCriteria = 0;
+            foreach (char c in orderingStr)
+                if (c == '+' || c == '-') numberOfCriteria++;
+
+             orderings = new Ordering[numberOfCriteria];
+
             string fieldName = "";
             int j = -1;
-            foreach (char c in Console.ReadLine())
+            foreach (char c in orderingStr)
             {
                 if (c == '+' || c == '-')
                 {
