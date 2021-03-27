@@ -16,7 +16,7 @@ namespace SorterTest
                         "id:2,nev:Jancsi",
                         "id:3,nev:Robert"
                     };
-            Program.sort
+            Sorting.sort
                 (
                     data,
                     new Ordering[]
@@ -39,7 +39,7 @@ namespace SorterTest
                         "id:5,nev:Margit,kor:6",
                         "id:6,nev:Robert,kor:12"
                     };
-            Program.sort
+            Sorting.sort
                 (
                     data,
                     new Ordering[]
@@ -61,7 +61,7 @@ namespace SorterTest
                         "id:3,nev:Margit,azonosito:tt,kor:21,nem:f",
                         "id:4,nev:Margit,azonosito:zz,kor:21,nem:l"
                     };
-            Program.sort
+            Sorting.sort
                 (
                     data,
                     new Ordering[]
@@ -80,7 +80,7 @@ namespace SorterTest
             int[] res = new int[data.Length];
             for (int i = 0; i < data.Length; i++)
             {
-                res[i] = Program.getAttr<int>(data[i], "id");
+                res[i] = data[i].getAttr<int>("id");
             }
 
             return res;
