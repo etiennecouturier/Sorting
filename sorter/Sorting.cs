@@ -4,20 +4,6 @@ namespace sorter
 {
     public class Sorting
     {
-
-        public static T getAttr<T>(string line, string attrName)
-        {
-            foreach (string s in line.Split(','))
-            {
-                string[] k = s.Split(':');
-                if (k[0] == attrName)
-                {
-                    return (T)Convert.ChangeType(k[1], typeof(T));
-                }
-            }
-            return default(T);
-        }
-
         static void BubbleSort<T>(
             string[] arr,
             string attr,
@@ -29,7 +15,7 @@ namespace sorter
             {
                 for (int i = begin; i <= end - 2; i++)
                 {
-                    if (compareFunc(getAttr<T>(arr[i], attr), getAttr<T>(arr[i + 1], attr)))
+                    if (compareFunc(arr[i].getAttr<T>(attr), arr[i+1].getAttr<T>(attr)))
                     {
                         string temp = arr[i + 1];
                         arr[i + 1] = arr[i];
@@ -49,7 +35,7 @@ namespace sorter
         private static bool isInt(string[] arr, Ordering[] orderings)
         {
             int intVal = 0;
-            bool isInt = int.TryParse(getAttr<string>(arr[0], orderings[0].getField()), out intVal);
+            bool isInt = int.TryParse(arr[0].getAttr<string>(orderings[0].getField()), out intVal);
             return isInt;
         }
 
@@ -67,7 +53,7 @@ namespace sorter
             int start = begin;
             for (int i = begin; i < end; i++)
             {
-                if (getAttr<string>(arr[i], orderings[0].getField()) != getAttr<string>(arr[start], orderings[0].getField()))
+                if (arr[i].getAttr<string>(orderings[0].getField()) != arr[start].getAttr<string>(orderings[0].getField()))
                 {
                     if ((i - start) > 1)
                         sortForAllCriteria(arr, start, i, getNewOrderings(orderings));
