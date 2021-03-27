@@ -1,0 +1,17 @@
+D:\repos\sorter\SorterTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\repos\sorter\SorterTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\repos\sorter\SorterTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\repos\sorter\SorterTest\bin\Debug\SorterTest.dll
+D:\repos\sorter\SorterTest\bin\Debug\SorterTest.pdb
+D:\repos\sorter\SorterTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\repos\sorter\SorterTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\repos\sorter\SorterTest\bin\Debug\sorter.exe
+D:\repos\sorter\SorterTest\bin\Debug\sorter.pdb
+D:\repos\sorter\SorterTest\bin\Debug\sorter.exe.config
+D:\repos\sorter\SorterTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\repos\sorter\SorterTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\repos\sorter\SorterTest\obj\Debug\SorterTest.csprojAssemblyReference.cache
+D:\repos\sorter\SorterTest\obj\Debug\SorterTest.csproj.CoreCompileInputs.cache
+D:\repos\sorter\SorterTest\obj\Debug\SorterTest.csproj.CopyComplete
+D:\repos\sorter\SorterTest\obj\Debug\SorterTest.dll
+D:\repos\sorter\SorterTest\obj\Debug\SorterTest.pdb

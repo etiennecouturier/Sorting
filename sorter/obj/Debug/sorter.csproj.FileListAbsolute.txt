@@ -1,0 +1,7 @@
+D:\repos\sorter\sorter\bin\Debug\sorter.exe.config
+D:\repos\sorter\sorter\bin\Debug\sorter.exe
+D:\repos\sorter\sorter\bin\Debug\sorter.pdb
+D:\repos\sorter\sorter\obj\Debug\sorter.csprojAssemblyReference.cache
+D:\repos\sorter\sorter\obj\Debug\sorter.csproj.CoreCompileInputs.cache
+D:\repos\sorter\sorter\obj\Debug\sorter.exe
+D:\repos\sorter\sorter\obj\Debug\sorter.pdb

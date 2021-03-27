@@ -1,0 +1,6 @@
+D:\repos\sorter\sorter\bin\Release\sorter.exe.config
+D:\repos\sorter\sorter\bin\Release\sorter.exe
+D:\repos\sorter\sorter\bin\Release\sorter.pdb
+D:\repos\sorter\sorter\obj\Release\sorter.csproj.CoreCompileInputs.cache
+D:\repos\sorter\sorter\obj\Release\sorter.exe
+D:\repos\sorter\sorter\obj\Release\sorter.pdb
