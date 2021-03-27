@@ -5,7 +5,7 @@ using sorter;
 namespace SorterTest
 {
     [TestClass]
-    public class UnitTest1
+    public class SortingTest
     {
         [TestMethod]
         public void TestMethod1()
@@ -16,10 +16,9 @@ namespace SorterTest
                         "id:2,nev:Jancsi",
                         "id:3,nev:Robert"
                     };
-            Program.sortAll
+            Program.sort
                 (
                     data,
-                    0, 3,
                     new Ordering[]
                     {
                         new Ordering("nev", true)
@@ -40,10 +39,9 @@ namespace SorterTest
                         "id:5,nev:Margit,kor:6",
                         "id:6,nev:Robert,kor:12"
                     };
-            Program.sortAll
+            Program.sort
                 (
                     data,
-                    0, 6,
                     new Ordering[]
                     {
                         new Ordering("kor", true),
@@ -63,10 +61,9 @@ namespace SorterTest
                         "id:3,nev:Margit,azonosito:tt,kor:21,nem:f",
                         "id:4,nev:Margit,azonosito:zz,kor:21,nem:l"
                     };
-            Program.sortAll
+            Program.sort
                 (
                     data,
-                    0, 4,
                     new Ordering[]
                     {
                         new Ordering("kor", false),

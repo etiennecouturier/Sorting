@@ -102,7 +102,7 @@ namespace sorter
             return default(T);
         }
 
-        static void sort<T>(
+        static void BubbleSort<T>(
             string[] arr,
             string attr,
             int begin, int end,
@@ -137,7 +137,7 @@ namespace sorter
             return isInt;
         }
 
-        public static void sortAll(
+        public static void sortForAllCriteria(
             string[] arr,
             int begin, int end,
             Ordering[] orderings
@@ -145,8 +145,8 @@ namespace sorter
         {
             if (orderings.Length == 0) return;
 
-            if (isInt(arr, orderings)) sort<int>(arr, orderings[0].getField(), begin, end, orderings[0].comp<int>());
-            else sort<string>(arr, orderings[0].getField(), begin, end, orderings[0].comp<string>());
+            if (isInt(arr, orderings)) BubbleSort<int>(arr, orderings[0].getField(), begin, end, orderings[0].comp<int>());
+            else BubbleSort<string>(arr, orderings[0].getField(), begin, end, orderings[0].comp<string>());
 
             int start = begin;
             for (int i = begin; i < end; i++)
@@ -154,10 +154,15 @@ namespace sorter
                 if (getAttr<string>(arr[i], orderings[0].getField()) != getAttr<string>(arr[start], orderings[0].getField()))
                 {
                     if ((i - start) > 1)
-                        sortAll(arr, start, i, getNewOrderings(orderings));
+                        sortForAllCriteria(arr, start, i, getNewOrderings(orderings));
                     start = i;
                 }
             }
+        }
+
+        public static void sort(string[] arr, Ordering[] orderings)
+        {
+            sortForAllCriteria(arr, 0, arr.Length, orderings);
         }
 
         static void Main(string[] args)
@@ -166,7 +171,7 @@ namespace sorter
             input.readInput();
             string[] arr = input.getData();
 
-            sortAll(arr, 0, arr.Length, input.getOrdering());
+            sortForAllCriteria(arr, 0, arr.Length, input.getOrdering());
             foreach (string p in arr)
                 Console.WriteLine(p);
             Console.ReadLine();
