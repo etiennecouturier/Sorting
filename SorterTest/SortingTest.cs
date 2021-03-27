@@ -95,6 +95,36 @@ namespace SorterTest
             CollectionAssert.AreEqual(new int[] { 3,4,2,1 }, ExtractResult(data));
         }
 
+        [TestMethod]
+        public void TestCopmlexSort()
+        {
+            string[] data =
+                    {
+                        "id:1,nev:Jancsi,azonosito:pp,kor:8,nem:f",
+                        "id:2,nev:Jancsi,azonosito:tt,kor:8,nem:f",
+                        "id:3,nev:Margit,azonosito:bb,kor:21,nem:f",
+                        "id:4,nev:Mark,azonosito:zz,kor:21,nem:l",
+                        "id:5,nev:Margit,azonosito:aa,kor:21,nem:l",
+                        "id:6,nev:Jancsi,azonosito:tt,kor:33,nem:f",
+                        "id:7,nev:Jancsi,azonosito:pp,kor:33,nem:f",
+                        "id:8,nev:Margit,azonosito:dd,kor:21,nem:f",
+                        "id:9,nev:Margit,azonosito:cc,kor:21,nem:l",
+                        //"id:10,nev:Margit,azonosito:aa,kor:2,nem:l",
+                        "id:11,nev:Mark,azonosito:zz,kor:11,nem:l"
+                    };
+            Sorting.sort
+                (
+                    data,
+                    new Ordering[]
+                    {
+                        new Ordering("nev", true),
+                        new Ordering("kor", false),
+                        new Ordering("azonosito", true)
+                    }
+                );
+            CollectionAssert.AreEqual(new int[] { 7,6,1,2,/*10,*/5,3,9,8,4,11 }, ExtractResult(data));
+        }
+
         private static int[] ExtractResult(string[] data)
         {
             int[] res = new int[data.Length];
