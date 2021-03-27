@@ -80,7 +80,7 @@ namespace SorterTest
             int[] res = new int[data.Length];
             for (int i = 0; i < data.Length; i++)
             {
-                res[i] = data[i].getAttr<int>("id");
+                res[i] = data[i].get<int>("id");
             }
 
             return res;

@@ -6,41 +6,41 @@ namespace sorter
     {
         public static void sort(Input input)
         {
-            sortForAllCriteria(input.getData(), 0, input.getData().Length, input.getOrdering());
+            sortForAllCriteria(input.getData(), 0, input.getData().Length, 0, input.getOrdering());
         }
 
         public static void sort(string[] arr, Ordering[] orderings)
         {
-            sortForAllCriteria(arr, 0, arr.Length, orderings);
+            sortForAllCriteria(arr, 0, arr.Length, 0, orderings);
         }
 
         private static void sortForAllCriteria(
             string[] arr,
-            int begin, int end,
+            int begin, int end, int orderInd,
             Ordering[] orderings
             )
         {
-            if (orderings.Length == 0) return;
+            if (orderings.Length == orderInd) return;
 
-            if (isInt(arr, orderings)) BubbleSort<int>(arr, orderings[0].getField(), begin, end, orderings[0].comp<int>());
-            else BubbleSort<string>(arr, orderings[0].getField(), begin, end, orderings[0].comp<string>());
+            if (isInt(arr, orderings[orderInd])) BubbleSort<int>(arr, orderings[orderInd].getField(), begin, end, orderings[orderInd].comp<int>());
+            else BubbleSort<string>(arr, orderings[orderInd].getField(), begin, end, orderings[orderInd].comp<string>());
 
             int start = begin;
             for (int i = begin; i < end; i++)
             {
-                if (arr[i].getAttr<string>(orderings[0].getField()) != arr[start].getAttr<string>(orderings[0].getField()))
+                if (arr[i].get<string>(orderings[orderInd].getField()) != arr[start].get<string>(orderings[orderInd].getField()))
                 {
                     if ((i - start) > 1)
-                        sortForAllCriteria(arr, start, i, getNewOrderings(orderings));
+                        sortForAllCriteria(arr, start, i, ++orderInd, orderings);
                     start = i;
                 }
             }
         }
 
-        private static bool isInt(string[] arr, Ordering[] orderings)
+        private static bool isInt(string[] arr, Ordering ordering)
         {
             int intVal = 0;
-            bool isInt = int.TryParse(arr[0].getAttr<string>(orderings[0].getField()), out intVal);
+            bool isInt = int.TryParse(arr[0].get<string>(ordering.getField()), out intVal);
             return isInt;
         }
 
@@ -51,11 +51,11 @@ namespace sorter
             Func<T, T, bool> compareFunc
             ) where T : IComparable
         {
-            for (int j = begin; j <= end - 2; j++)
+            for (int j = begin; j < end - 1; j++)
             {
-                for (int i = begin; i <= end - 2; i++)
+                for (int i = begin; i < end - 1; i++)
                 {
-                    if (compareFunc(arr[i].getAttr<T>(attr), arr[i+1].getAttr<T>(attr)))
+                    if (compareFunc(arr[i].get<T>(attr), arr[i+1].get<T>(attr)))
                     {
                         string temp = arr[i + 1];
                         arr[i + 1] = arr[i];
@@ -64,13 +64,6 @@ namespace sorter
                 }
             }
         }
-
-        private static Ordering[] getNewOrderings(Ordering[] orderByAttrs)
-        {
-            Ordering[] newOrderByAttrs = new Ordering[orderByAttrs.Length - 1];
-            Array.Copy(orderByAttrs, 1, newOrderByAttrs, 0, newOrderByAttrs.Length);
-            return newOrderByAttrs;
-        }   
 
     }
 }
