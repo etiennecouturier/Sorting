@@ -30,9 +30,12 @@ namespace sorter
             {
                 if (arr[i].Get<string>(orderings[orderInd].GetField()) != arr[start].Get<string>(orderings[orderInd].GetField()))
                 {
-                    if ((i - start) > 1)
-                        SortForAllCriteria(arr, start, i, ++orderInd, orderings);
+                    if ((i - start) >= 1) { SortForAllCriteria(arr, start, i, orderInd + 1, orderings); }
                     start = i;
+                }
+                else if (i == end - 1)
+                {
+                    if ((i - start) >= 1) { SortForAllCriteria(arr, start, end, orderInd + 1, orderings); }
                 }
             }
         }

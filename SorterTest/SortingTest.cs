@@ -109,7 +109,7 @@ namespace SorterTest
                         "id:7,nev:Jancsi,azonosito:pp,kor:33,nem:f",
                         "id:8,nev:Margit,azonosito:dd,kor:21,nem:f",
                         "id:9,nev:Margit,azonosito:cc,kor:21,nem:l",
-                        //"id:10,nev:Margit,azonosito:aa,kor:2,nem:l",
+                        "id:10,nev:Margit,azonosito:aa,kor:86,nem:l",
                         "id:11,nev:Mark,azonosito:zz,kor:11,nem:l"
                     };
             Sorting.sort
@@ -122,7 +122,7 @@ namespace SorterTest
                         new Ordering("azonosito", true)
                     }
                 );
-            CollectionAssert.AreEqual(new int[] { 7,6,1,2,/*10,*/5,3,9,8,4,11 }, ExtractResult(data));
+            CollectionAssert.AreEqual(new int[] { 7,6,1,2,10,5,3,9,8,4,11 }, ExtractResult(data));
         }
 
         private static int[] ExtractResult(string[] data)
