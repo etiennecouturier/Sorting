@@ -8,10 +8,8 @@ namespace sorter
         static void Main(string[] args)
         {
             Input input = new Input();
-            string[] arr = input.getData();
-
-            Sorting.sort(arr, input.getOrdering());
-            foreach (string p in arr)
+            Sorting.sort(input);
+            foreach (string p in input.getData())
                 Console.WriteLine(p);
             Console.ReadLine();
         }

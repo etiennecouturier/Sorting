@@ -2,7 +2,7 @@
 
 namespace sorter
 {
-    class Input
+    public class Input
     {
         private Ordering[] orderings = new Ordering[4];
         private string[] data;

@@ -4,6 +4,10 @@ namespace sorter
 {
     public class Sorting
     {
+        public static void sort(Input input)
+        {
+            sortForAllCriteria(input.getData(), 0, input.getData().Length, input.getOrdering());
+        }
 
         public static void sort(string[] arr, Ordering[] orderings)
         {
